@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" type="text/css" href="style/styleapp.css">
+    <script type="text/javascript" src="js/index.js"></script>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+
+<body>
+   <ons-navigator swipeable id="myNavigator" page="UsuarioUdg.html"></ons-navigator>
+    <template id="UsuarioUdg.html">
+        <ons-page id="UsuarioUdg">
+            <center>
+                <div id="emergente">
+                    <label>Hola <label id="NameO"></label>!</label>
+                    <br>
+                    <br>
+                    <ons-input id="PlacasO"  placeholder="Placas" type="text" modifier="underbar"></ons-input>
+                    <br>
+                    <br>
+                    <ons-input id="TelefonoO"  placeholder="Telefono" type="tel" modifier="underbar"></ons-input>
+                    <br>
+                    <br>
+                    <ons-button id="Salvar" modifier="outline" onclick="popupclick()">Salvar</ons-button>
+
+
+                </div>
+                <h1>ESTACIONAMIENTO CUCEI</h1>
+                <br>
+                <br>
+                <img src ="img/directions_car-24px.svg"height="200" width="400">
+                <br>
+                <br>
+            <ons-input input-id="pruebaUser" placeholder="Codigo" type="text" modifier="underbar"></ons-input>
+                <br>
+                <br>
+            <ons-input input-id="pruebaPw" placeholder="NIP" type="password" modifier="underbar"></ons-input>
+                <br>
+                <br>
+
+            <ons-button id="BotonEntrar" modifier="outline" onclick="Enviar()">Enviar</ons-button>
+            <br>
+            <a id="NewUser" onclick="registrarnuevo()">Agregar Usuario</a>                
+            </center>
+        </ons-page>
+    </template>
+    <template id="UsuarioNuevo.html">
+        <ons-page id="UsuarioNuevo">
+            <center>
+               <label>Codigo: <label id="CodInt"> </label></label>
+               <br>
+               <br>
+               <ons-input  id="NameI" placeholder="Nombre" type="text" modifier="underbar"></ons-input>
+               <br>
+               <br>
+               <ons-input id="PlacasIn" placeholder="Placas" type="text" modifier="underbar"></ons-input>
+               <br>
+               <br>
+               <ons-input id="TelefonoIn" placeholder="Telefono" type="tel" modifier="underbar"></ons-input>
+               <br>
+               <br>
+               <ons-input  id="PassWordI" placeholder="Contraseña" type="password" modifier="underbar"></ons-input>
+               <br>
+               <br>
+               <ons-button id="Alta" modifier="outline" onclick="registrarnuevoOnclick()">Alta</ons-button>
+
+                                
+            </center>
+        </ons-page>
+    </template>
+    <template id="MapaEstacionamiento.html">
+        <ons-page id="MapaEstacionamiento">
+            <center>
+                 <label>Nombre: <label id="NameM"></label></label>
+                 <br>
+                 <br>
+                 <div id="map"> </div>
+                 <br>
+                 <br>
+                 <ons-button id="Salir" modifier="outline" onclick='Salir()'>Salir</ons-button> 
+                 <ons-button id="ocupar" onclick='ocupar()'>Ocupar</ons-button>              
+                 <ons-button id="desocupar" onclick='desocupar()'>Desocupar</ons-button>
+            </center>
+        </ons-page>
+    </template>
+</body>
+
+</html>
